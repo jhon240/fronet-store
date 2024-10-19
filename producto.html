@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fronet storet</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- la aurl de los estilos-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Aquí puedes agregar el contenido de tu página -->
+    <header class="header"><!--Bloque -->
+        <a href="index.html" alt="logotipo"><!--elemento del bloque-->
+            <img class="header__logo" src="img/logo.png"><!-- imagen del logo " frontend store"-->
+        </a><!--final del elemento del bloque-->
+    </header><!--Final del bloque -->
+
+    <nav class="navegacion"><!--Bloque -->
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a><!--el sgundo "navegacion__enlace--activo" es el modificador -->
+        <a class="navegacion__enlace" href="nosotros.html">Nosostros</a><!--los enlaces "Tienda Nosostros"--><!---->
+    </nav><!--final del bloque --> <!-- -->
+
+    <main class="contenedor">
+        <h1>reactjs</h1><!--nombre del producto "camisa"esta ubicada en la tienda-->
+        <div class="camisa">
+            <img class="camisa__imagen" src="img/3.jpg" alt="iamgen del producto"><!--imagen del producto que se escoge-->
+            <div class="camisa__contenido">
+                <p>In non enim porttitor, consequat erat id, suscipit est. 
+                    Vivamus vel ante a ante mattis venenatis.</p>
+
+                    <form class="formulario"><!--inicio este codigo me permite crear crear un boton donde pueda escojer la talla de camisa "grande,mediana,pequeña"-->
+                        <select class="formulario__campo">
+                            <option disabled selected>--seleccionar talla--</option><!--" disabled (me oculta "selecionar talla")"selcted"("me permite mostrarlo mas no escojerlo)-->
+                            <option>chica</option><!--estos son atributos-->
+                            <option>mediana</option><!--atributos-->
+                            <option>grande</option><!--atributos-->
+                        </select>
+                        <input class="formulario__campo" type="number" placeholder="cantidad" maxlength="1"><!--el boton donde se ubica las cantidades de camisa que desea el cliente "type="number" es para numeros"type="tex"solo para textos""-->
+                        <input  class="formulario__submit" type="submit" value="AGREGAR AL CARRITO"><!--boton o "atributo" agregar al carrito-->
+                    </form><!--fin-->
+                   
+
+            </div>
+        </div>
+
+    </main>
+    <footer class="footer"><!--bloque -->
+        <p class="footer__texto">frontend End Store - Todos Los Derechos Reservados 2024</p>
+    </footer><!--final de bloque -->
+</body> 
+</html>

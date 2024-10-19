@@ -1,0 +1,225 @@
+:root {
+  --primario: #9C27B0;
+  --primariooscuro: #891190;
+  --secundario: yellow;
+  --secundariooscuro: rgb(233, 287, 2);
+  --blanco: #fff;
+  --negro: #000;
+
+  --fuenteprincipal: "Staatliches", sans-serif;
+
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,*:before,*:after {
+  box-sizing: inherit;
+}
+
+/** globales **/
+body {
+  background-color: var(--primario);/**color de fondo**/
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;/**Estilo de las letras**/ 
+  color: var(--blanco);/**Color de las letras principales**/
+}
+a {
+  text-decoration: none;/**para que los enlaces tenga diferentes interlineado**/
+}
+img {
+  width: 100%;/**Tmaño del logo"frontend store"**/
+}
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+h1,h2,h3 {/**selectores **/
+  text-align: center;/**centrar los textos **/
+  color: var( --secundario);/**color para las letras del contenedor**/
+  font-family: var(--fuenteprincipal);
+}
+h1 { 
+  font-family: 4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+
+/**header**/
+.header {
+   display: flex;/**se centra "fontend store"**/
+   justify-content: center;/**se centra "frontend store"**/
+}
+.header__logo {
+   margin: 3rem 0;/**me separa el "frontend store del marco superor de la pagina"**/
+}
+/**footer**/
+.footer {
+background-color: var(--primariooscuro);/**color para la franja donde esta "todos los derechos reservados"**/
+padding: 1rem 0;/** se amplia la franja donde esta ubicado"dechos reervado"**/
+margin-top: 2rem; /**se separa del elemto de arriba **/
+}
+.footer__texto {
+font-family: var(--fuenteprincipal);/**diseño para la letra "derecho reservado"**/
+text-align: center;/**se centra el texto de "derecho reservado"**/
+font-size: 3.2rem;/**la letra es mas grande de "derecho reservado"**/
+}
+/**navegacion**/
+.navegacion {/**contenedor de ubicacion de "tienda y nosostros"**/
+background-color: var(--primariooscuro);/**color de la franja donde esta ubicado "nosostros tienda"**/
+padding: 1rem 0;/**ampliar la franja donde esta ubicado "nosotros tienda**/
+display: flex;/**se centra  "nostros tienda"**/
+justify-content: center;/**se centra "nosostro tienda"**/
+gap: 2rem;/**para separa el parrafo de "nosotros tiendas"**/
+}
+.navegacion__enlace {
+font-family: var(--fuenteprincipal);/**el diseño de la letra de "nosotros tienda"**/
+color: var(--blanco);/**color de la letra "nosotros tienda"**/
+font-size: 3rem;/**se amplia el el parrafo "nosotros tienda"**/
+/**esta es la forma anterior si estuviera "gap: 2rem;" se utilzaria 
+margin-right:2rem; **/
+}
+.navegacion__enlace--activo,/**permite que solo el parrafo "tienda este de color amarillo" es conocido como "modificador"**/
+.navegacion__enlace:hover /**el hover es para cuando se para en el parrafo de "tienda nosotros" cambie de blanco a amarillo**/{
+color: var(--secundario);/**es el color para el parrafo "tienda nosostros"**/
+}
+/**grid**/
+.grid {
+   display: grid;/**permite que se posicione una imagen debajo de la otra**/
+   grid-template-columns: repeat(2, 1fr);/**pemite crear 2 columnas, separando una imagen de la otra derecha izquierda**/
+   grid-gap: 20px;/**separa las imagenes una de otra**/
+}
+@media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3,1fr);/**permite crear 3 columnas posisionando las imagenes en forma vetical**/
+    }
+}
+/**productos**/
+.producto{
+  background-color: var(--primariooscuro);/**color donde esta ubicado el "nombre y precio"**/
+  padding: 1rem;/**permite que la imagen "camisa" tenga un contramarco**/
+}
+
+.producto__nombre{
+  font-size: 4rem;/**donde ubicado el nombre y el precio"vuejs 25"sea mas grande**/
+}
+.producto__precio{
+  font-size: 2.8rem;/**permite que el precio "25" sea mas grande**/
+  color: var(--secundario);/**permite que el valor "25"tenga el color amarillo**/
+
+}
+.producto__nombre,
+.producto__precio {
+  font-family: var(--fuenteprincipal);/**permite que el nombre y valor"vuejs 25"tenga el mismo estilo de letra**/
+  margin: 1rem 0;/**permite que el texto"vuejs" este mas pegado ala imagen"camisa"**/
+  text-align: center;/**permite que el texto "vuejs 25" se centre en el contenedor**/
+  line-height: 1.2;/**permite que el contenedor de "vuejs 25"sea un poco mas cerrado**/
+}
+/**graficos**/
+.grafico{
+  min-height: 30rem;/**me permite que cuando cierro un poco la pantalla me pueda aparecer los graficos**/
+  background-repeat: no-repeat ;/**me permite que la imagen no se repita **/
+  background-size: cover;/**me permite que  la imagen se expande**/
+  grid-column:1/ 3 ;/**son los numeros de izquierda a derecha como "cuadrado"**/
+}
+.grafico--camisas{/**imagen grande #1**/
+  grid-row:2 / 3;/**son los numeros de arriba hacia abajo como unas "casillas"**/
+  background-image: url(../img/grafico1.jpg);/**es la imagen grande que ocupa 2 casillas en la cual esta en el segundo contenedor**/
+}
+.grafico--node {
+  background-image: url(../img/grafico2.jpg);/**es la imagen grande que ocupa 2 casillas en la cual esta en el ultimo contenedor**/
+  grid-row: 5/ 6;/**son los numeros de arriba hacia abajo como unas "casillas"**/
+  grid-column: 2/ 4;/**son los numeros de izquierda a derecha como "cuadrado"**/
+}
+@media (min-width: 768)
+ {
+  .grafico--node{/**imagen grande #2**/
+    grid-row: 5/ 6;/**son los numeros de arriba hacia abajo como unas "casillas"**/
+    grid-column: 2/ 4; /**son los numeros de izquierda a derecha como "cuadrado"**/
+  }
+    
+}
+
+/**nosotros**/
+.nosotros {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+  .nosotros {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.nosotros__imagen {
+  grid-row: 1 / 2; /* Cambiado de 1 / 4 a 1 / 2 */
+ 
+}
+
+@media (min-width: 768px) {
+  .nosotros__imagen {
+    grid-column: 2/ 3; /* Cambiado de 2 / 3 a 2 */ /*me permite ubicarla la imagen en la segunda columna*/
+  }
+}
+
+/** Bloques **/
+.bloques {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .bloques {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bloque {
+  text-align: center;/**se centra el texto "el mejor precio, donec ullamcorp nisl"**/
+}
+
+.bloque__titulo {
+  margin: 0;/**se separa el texto"el mejor precio,para desarrolladores" del icono **/
+}
+/**pagina del producto**/
+@media (min-width: 768px) {
+  .camisa { 
+    display: grid;/**me permite posisionar el formulario "seleccionar talla" al lado de la imagen "camisa"**/
+    grid-template-columns: repeat(2, 1fr);/**se crea uuna columna de entre la imagen "camisa" y el formmulario "seccionar talla" **/
+    column-gap: 2rem;/**permite separar la imagen "canisa reactjs" de las letras y del formulario"selecionar talla"**/
+
+  } 
+}
+
+.formulario__campo {
+ /** border-color: var(--primariooscuro);/**me permite que el bordo del boton "cantidad seleccionar talla" sea oscuro**/
+/**  border-width: 1rem;/**me permite que el bordo sea mas grueso**/
+ /** border-style: solid; /**me permite que sea una linea pareja y solida en el boton "cantidad seleccionar talla"**/
+  border: 1rem solid var(--primariooscuro);/**este codigo me reemplaza los 3 codigos de arriba " border-color: var(--primariooscuro); ,  border-width: 1rem; , border-style: solid;"**/
+}
+.formulario__submit { /**este pertenece al boton de aggrar al carrito**/
+  background-color: var(--secundario);/**color del boton "agregar al carrito"**/
+  border: none;/**se puede modificar el bordo al boton "aggar al carrito"**/
+  font-size: 2rem;/**me permite que el boton sea mas grande "2 rem "grande"" y "1rem"menos pequeño""**/
+  font-family: var(--fuenteprincipal);/**me permite darle el diseño ala letra del boton "aggar al carrito"**/
+  padding: 2rem;/**me permite que el boton sea mas grande permitiendo que la letra se mantenga en su tamaño**/
+  transition:  background-color .3s ease-in; /** se cambia el  background-color por font-size .3s ease-in "me permite realizar una transition para que el boton cresca "**/ /**me permite que el boton cambie de color como una animacion solo por 2segundos**/
+}
+.formulario__submit:hover {
+  /**font-size: 2.4rem; "se puede utilizar para que el boton cresca"**/
+  cursor: pointer;/**me permite que cuando me paro sobre el boton aparesca la manito del cursor**/
+  background-color: var(--secundariooscuro);/**me permite que cuando me pare en el boton"aggegar al carrito"cambie de color como una animacion "solo se puede observar si lo haces lento"como una transicion"**/
+}
